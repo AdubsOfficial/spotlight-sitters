@@ -1,210 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  scroll-behavior: smooth;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ec4899;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #db2777;
-}
-
-/* Smooth transitions for all interactive elements */
-* {
-  transition: all 0.3s ease;
-}
-
-/* Custom button hover effects */
-.btn-primary {
-  @apply bg-pink-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  @apply bg-pink-700 shadow-xl;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  @apply border-2 border-pink-600 text-pink-600 px-8 py-4 rounded-full font-semibold;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  @apply bg-pink-600 text-white;
-  transform: translateY(-2px);
-}
-
-/* Card hover effects */
 .card {
-  transition: all 0.3s ease;
+  padding: 2em;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.read-the-docs {
+  color: #888;
 }
 
-/* Form focus states */
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-  ring: 2px;
-  ring-color: #ec4899;
-  border-color: transparent;
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s;
 }
-
-/* Animation for loading states */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+button:hover {
+  border-color: #646cff;
 }
-
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Gradient text effect */
-.gradient-text {
-  background: linear-gradient(135deg, #ec4899, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Mobile menu animation */
-#mobile-menu {
-  transition: all 0.3s ease;
-}
-
-/* Hero section background animation */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.float-animation {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Service card icons animation */
-.service-icon {
-  transition: all 0.3s ease;
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.1) rotate(5deg);
-}
-
-/* Testimonial card styling */
-.testimonial-card {
-  background: linear-gradient(135deg, #fdf2f8, #f3e8ff);
-  transition: all 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer link hover effects */
-footer a {
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: #ec4899;
-}
-
-/* Contact form button loading state */
-button[type="submit"]:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-/* Responsive design enhancements */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-    line-height: 1.2;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .section-padding {
-    padding: 3rem 0;
-  }
-}
-
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Focus indicators for keyboard navigation */
-a:focus,
 button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid #ec4899;
-  outline-offset: 2px;
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  .bg-gradient-to-br {
-    background: #ffffff;
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
   }
-  
-  .text-gray-600 {
-    color: #000000;
+  a:hover {
+    color: #747bff;
   }
-  
-  .text-gray-400 {
-    color: #333333;
+  button {
+    background-color: #f9f9f9;
+    color: #213547;
   }
 }
